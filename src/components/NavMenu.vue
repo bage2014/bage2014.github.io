@@ -35,6 +35,7 @@
             v-for="item in items"
             :key="item.title"
             link
+            :to="item.to"
           >
             <v-list-item-icon>
               <v-icon>{{ item.icon }}</v-icon>
@@ -54,9 +55,10 @@
       return {
         drawer: true,
         items: [
-          { title: 'Dashboard', icon: 'mdi-view-dashboard' },
-          { title: 'Photos', icon: 'mdi-image' },
-          { title: 'About', icon: 'mdi-help-box' },
+          { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/' },
+          { title: 'Profile', icon: 'mdi-image', to: '/Profile'},
+          { title: 'About', icon: 'mdi-help-box', to: '/About' },
+          { title: 'BreadCrumbs', icon: 'mdi-help-box', to: '/BreadCrumbs' },
         ],
         color: 'teal',
         colors: [
