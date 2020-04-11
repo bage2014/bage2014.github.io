@@ -2,6 +2,8 @@
 
 # my-app
 
+E:\Data\Chrome Download\laravel-spa-vuetify-starter-master\laravel-spa-vuetify-starter-master\resources\assets\js\plugins
+
 > my-app
 
 ## Build Setup
