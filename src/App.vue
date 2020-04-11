@@ -10,6 +10,7 @@
 
       <v-app-bar app>
         <!-- -->
+        <app-bar></app-bar>
       </v-app-bar>
 
       <!-- Sizes your content based upon application components -->
@@ -33,12 +34,14 @@
 <script>
 
 import NavMenu from '@/components/NavMenu'
+import AppBar from '@/components/AppBar'
 
 
 export default {  
   name: 'App',
   components: {
     'nav-menu': NavMenu,
+    'app-bar': AppBar,
   },
 }
 </script>
