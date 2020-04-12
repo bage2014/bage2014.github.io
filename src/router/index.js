@@ -6,8 +6,11 @@ import AppBar from '@/components/AppBar'
 import Profile from '@/components/Profile'
 import About from '@/components/About'
 import BreadCrumbs from '@/components/BreadCrumbs'
+import auth from '../auth'
+import Login from '@/components/Login'
 
 Vue.use(Router)
+
 
 export default new Router({
   routes: [
@@ -26,15 +29,33 @@ export default new Router({
     },{
       path: '/Profile',
       name: 'Profile',
-      component: Profile
+      component: Profile,
+      beforeEnter: requireAuth
     },{
       path: '/About',
       name: 'About',
-      component: About
+      component: About,
+      beforeEnter: requireAuth
     },{
       path: '/BreadCrumbs',
       name: 'BreadCrumbs',
       component: BreadCrumbs
+    },{
+      path: '/Login',
+      name: 'Login',
+      component: Login
     }
   ]
 })
+
+
+function requireAuth (to, from, next) {
+  if (!auth.loggedIn()) {
+    next({
+      path: '/Login',
+      query: { redirect: to.fullPath }
+    })
+  } else {
+    next()
+  }
+}
